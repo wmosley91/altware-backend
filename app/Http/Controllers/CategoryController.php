@@ -10,6 +10,11 @@ use App\Category;
 
 class CategoryController extends Controller
 {
+    public function __construct()
+    {
+      $this->middleware('jwt.auth', ['only' => ['store', 'update', 'delete']]);
+    }
+
     public function store(Request $request)
     {
       $rules = [

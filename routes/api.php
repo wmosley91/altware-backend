@@ -24,4 +24,7 @@ Route::post('deleteSoftware/{id}', 'SoftwareController@delete');
 Route::get('softwareIndex', 'SoftwareController@index');
 Route::get('software/{id}', 'SoftwareController@get');
 
+Route::post('signUp', 'UserController@signUp');
+Route::post('signIn', 'UserController@signIn');
+
 Route::any('{path?}', 'MainController@index')->where("path", ".+");
